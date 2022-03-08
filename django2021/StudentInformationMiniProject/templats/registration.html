@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block body_block %} {% load static %}
+<h1 style="background-color: aqua;"> Registration... </h1>
+<!-- <h1 style="color:red"> {{ insert_me }} </h1> -->
+{% comment %} <img src="{% static 'images/jellyfish.jpg' %}" alt="jellyfish">{% endcomment %}
+<form class="form" method="POST" style="margin-left:200;box-shadow:0 0 1px; padding: 100px;">
+    <fieldset>
+        {{form.as_p}} {% csrf_token %}
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+{% endblock body_block %}

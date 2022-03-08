@@ -1,0 +1,51 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Information </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-responsive.css' %}">
+</head>
+
+<body style="background-color: rgb(26, 170, 122);">
+    <nav class="navbar navbar-inverse">
+        <div class="container" id="ContentPlaceHolder1_UserMenuHorizontal1_divMenu">
+            <div class="container-fluid" style="text-align:center">
+                <!--  Header  -->
+                <div cslass="navbar-header">
+                    <div class="navbar-inner">
+                        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>-->
+                        <a class="btn btn-primary btn-block btn-lg" href="{% url 'index' %}">Student's Information </a>
+                    </div>
+                </div>
+                <!--  Items  -->
+                <div class="collapse navbar-collapse" id="topNavBar"></div>
+                <ul class="nav">
+                    <li class="nav-link-active"><a href="{% url 'index' %}" class="btn btn-danger btn-block btn-lg">Home</a>
+                    </li>
+                    {% comment %}
+                    <li><a href="{% url 'mysite:about' %}" class="btn btn-primary btn-block btn-lg">About</a>
+                    </li>{% endcomment %}
+                    <li><a href="{% url 'mysite:registration' %}" class="btn btn-success btn-block btn-lg">Registration</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div>
+            {% block body_block %} {% endblock body_block %}
+
+        </div>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>

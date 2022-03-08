@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block body_block %} {% load static %}
+
+<h1 style="background-color: darkcyan;"> Edit Records... </h1>
+
+{% comment %} <img src="{% static 'images/jellyfish.jpg' %}" alt="jellyfish">{% endcomment %}
+<form class="form" method="POST" style="margin-left:200;box-shadow:0 0 1px; padding: 100px;">
+    <fieldset>
+        {{form.as_p}} {% csrf_token %}
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+     <input required name="images" type="file" multiple >
+    <button class="btn btn-primary" type="submit">Upload</button>
+  </form>
+{% endblock body_block %}
